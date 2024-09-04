@@ -1,10 +1,12 @@
 #ifndef FERTILIZERTRUCK_H
 #define FERTILIZERTRUCK_H
+#include "Truck.h"
+#include "CropField.h"
 
 class FertilizerTruck : Truck {
 
 public:
-	CropFields* cropFields;
+	CropField* cropFields;
 
 	void buyTruck();
 

@@ -1,10 +1,14 @@
 #ifndef FARMLAND_H
 #define FARMLAND_H
+#include "FarmUnit.h"
+#include "Iterator.h"
+#include <vector>
+
 
 class FarmLand : FarmUnit {
 
 public:
-	vector<FarmUnits*> Units;
+	std::vector<FarmUnit*> Units;
 
 	Iterator* createIterator();
 };

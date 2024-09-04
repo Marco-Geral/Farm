@@ -1,5 +1,6 @@
 #ifndef BREADTHFIRSTITERATOR_H
 #define BREADTHFIRSTITERATOR_H
+#include "Iterator.h"
 
 class BreadthFirstIterator : Iterator {
 

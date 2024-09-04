@@ -1,10 +1,11 @@
 #ifndef FIELDUPGRADES_H
 #define FIELDUPGRADES_H
+#include "FarmUnit.h"
 
 class FieldUpgrades {
 
 private:
-	FarmUnits* Pieces;
+	FarmUnit* Pieces;
 
 public:
 	virtual void upgrade() = 0;

@@ -1,14 +1,16 @@
 #ifndef BARN_H
 #define BARN_H
+#include "FarmUnit.h"
+#include <string>
 
 class Barn : FarmUnit {
 
 private:
-	ENUM cropType;
+	std::string cropType;
 	double capacity;
 
 public:
-	ENUM getCropType();
+	std::string getCropType();
 
 	double getTotalCapacity();
 };
