@@ -1,6 +1,6 @@
 #include "Barn.h"
 
-ENUM Barn::getCropType() {
+std::string Barn::getCropType() {
 	return this->cropType;
 }
 
