@@ -5,7 +5,7 @@ double FarmUnit::getTotalCapacity() {
 	throw "Not yet implemented";
 }
 
-ENUM FarmUnit::getCropType() {
+std::string FarmUnit::getCropType() {
 	return this->cropType;
 }
 

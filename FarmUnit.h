@@ -1,16 +1,18 @@
 #ifndef FARMUNIT_H
 #define FARMUNIT_H
+#include "Iterator.h"
+#include <string>
 
 class FarmUnit {
 
 private:
-	ENUM cropType;
+	std::string cropType;
 	double capacity;
 
 public:
 	double getTotalCapacity();
 
-	ENUM getCropType();
+	std::string getCropType();
 
 	Iterator* createIterator();
 };
