@@ -10,11 +10,11 @@ private:
 	double capacity;
 
 public:
-	double getTotalCapacity();
+	virtual double getTotalCapacity() = 0;
 
-	std::string getCropType();
+	virtual std::string getCropType() = 0;
 
-	Iterator* createIterator();
+	virtual Iterator* createIterator() = 0;
 };
 
 #endif
