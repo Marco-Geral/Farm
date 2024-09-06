@@ -8,6 +8,7 @@ class FarmUnit {
 protected:
     std::string cropType;
     double capacity;
+    double currentAmount;
 
 public:
     virtual double getTotalCapacity() = 0;

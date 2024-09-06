@@ -9,6 +9,7 @@ class CropField : public FarmUnit {
 private:
 	Soil* soilState;
 public:
+	CropField(const std::string& cropType, double capacity, Soil* soilState);
 	std::string getSoilStateName();
 	double getTotalCapacity();
 	std::string getCropType();

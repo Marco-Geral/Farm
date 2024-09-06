@@ -3,15 +3,12 @@
 #include "FarmUnit.h"
 #include <string>
 
-class Barn : FarmUnit {
-
-private:
-	std::string cropType;
-	double capacity;
+class Barn : public FarmUnit {
 
 public:
-	std::string getCropType();
 
+	Barn(const std::string& cropType, double capacity);
+	std::string getCropType();
 	double getTotalCapacity();
 };
 
