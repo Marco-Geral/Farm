@@ -11,6 +11,8 @@ public:
 	std::vector<FarmUnit*> Units;
 
 	Iterator* createIterator();
+	double getTotalCapacity();
+	std::string getCropType();
 };
 
 #endif
