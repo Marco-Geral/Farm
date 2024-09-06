@@ -9,6 +9,8 @@ public:
 	Soil* soilState;
 
 	void getSoilStateName();
+	double getTotalCapacity();
+	std::string getCropType();
 };
 
 #endif
