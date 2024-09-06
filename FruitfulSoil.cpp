@@ -1,7 +1,7 @@
 #include "FruitfulSoil.h"
 
 FruitfulSoil::FruitfulSoil() {
-	soilState =  "FruitfulSoil";
+	soilState =  "Fruitful";
 }
 
 void FruitfulSoil::harvestCrops() {
@@ -15,6 +15,5 @@ void FruitfulSoil::rain() {
 }
 
 std::string FruitfulSoil::getName() {
-	// TODO - implement FruitfulSoil::getName
-	throw "Not yet implemented";
+	return this->soilState;
 }

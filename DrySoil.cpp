@@ -1,7 +1,7 @@
 #include "DrySoil.h"
 
 DrySoil::DrySoil() {
-	soilState = "DrySoil";
+	soilState = "Dry";
 }
 void DrySoil::harvestCrops() {
 	// TODO - implement DrySoil::harvestCrops
@@ -14,6 +14,5 @@ void DrySoil::rain() {
 }
 
 std::string DrySoil::getName() {
-	// TODO - implement DrySoil::getName
-	throw "Not yet implemented";
+	return this->soilState;
 }

@@ -1,7 +1,7 @@
 #include "FloodedSoil.h"
 
 FloodedSoil::FloodedSoil() {
-	soilState = "FloodedSoil";
+	soilState = "Flooded";
 }
 
 void FloodedSoil::harvestCrops() {
@@ -15,6 +15,5 @@ void FloodedSoil::rain() {
 }
 
 std::string FloodedSoil::getName() {
-	// TODO - implement FloodedSoil::getName
-	throw "Not yet implemented";
+	return this->soilState;
 }
