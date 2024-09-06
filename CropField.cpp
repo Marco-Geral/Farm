@@ -8,11 +8,10 @@ std::string CropField::getSoilStateName() {
     }
 }
 
-
 double CropField::getTotalCapacity() {
-	return this->FarmUnit::getTotalCapacity();
+    return capacity;
 }
 
 std::string CropField::getCropType() {
-	return this->FarmUnit::getCropType();
+    return cropType;
 }

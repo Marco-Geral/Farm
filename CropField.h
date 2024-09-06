@@ -4,12 +4,11 @@
 #include "Soil.h"
 #include <string>
 
-class CropField : FarmUnit {
-
-public:
+class CropField : public FarmUnit {
+	
+private:
 	Soil* soilState;
-	//std::string cropType;
-
+public:
 	std::string getSoilStateName();
 	double getTotalCapacity();
 	std::string getCropType();

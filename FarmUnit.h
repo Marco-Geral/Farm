@@ -5,16 +5,14 @@
 
 class FarmUnit {
 
-private:
-	std::string cropType;
-	double capacity;
+protected:
+    std::string cropType;
+    double capacity;
 
 public:
-	virtual double getTotalCapacity() = 0;
-
-	virtual std::string getCropType() = 0;
-
-	virtual Iterator* createIterator() = 0;
+    virtual double getTotalCapacity() = 0;
+    virtual std::string getCropType() = 0;
+    virtual Iterator* createIterator() = 0;
 };
 
 #endif
