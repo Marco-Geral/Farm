@@ -2,6 +2,7 @@
 #define CROPFIELD_H
 #include "FarmUnit.h"
 #include "Soil.h"
+#include <string>
 
 class CropField : FarmUnit {
 
@@ -9,7 +10,7 @@ public:
 	Soil* soilState;
 	//std::string cropType;
 
-	Soil* getSoilStateName();
+	std::string getSoilStateName();
 	double getTotalCapacity();
 	std::string getCropType();
 };

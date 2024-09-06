@@ -1,16 +1,16 @@
 #ifndef FRUITFULSOIL_H
 #define FRUITFULSOIL_H
 #include "Soil.h"
+#include <string>
 
-class FruitfulSoil : Soil {
+class FruitfulSoil : public Soil {
 
 
 public:
+	FruitfulSoil();
 	void harvestCrops();
-
 	void rain();
-
-	void getName();
+	std::string getName();
 };
 
 #endif
