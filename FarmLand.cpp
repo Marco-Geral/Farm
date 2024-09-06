@@ -6,11 +6,33 @@ Iterator* FarmLand::createIterator() {
 }
 
 double FarmLand::getTotalCapacity() {
-	// TODO - implement FarmLand::getSoilStateName
-	throw "Not yet implemented";
+	double sum = 0;
+	for(int i = 0; i < Units.size();i++){
+		sum += Units[i]->getTotalCapacity();
+	}
+	return sum;
 }
 
 std::string FarmLand::getCropType() {
-	// TODO - implement FarmLand::getSoilStateName
-	throw "Not yet implemented";
+    std::string crops;
+    for(int i = 0; i < Units.size(); i++) {
+        crops += Units[i]->getCropType();
+        if (i < Units.size() - 1) {
+            crops += " | ";
+        }
+    }
+    return crops;
+}
+
+void FarmLand::add(FarmUnit* unit) {
+	units.push_back(unit);
+}
+
+void FarmLand::remove(FarmUnit* unit) {
+	for(std::size_t i = 0; i < units.size(); i++) {
+		if (units[i] == unit) {
+			units.erase(units.begin() + i);
+			break;
+		}
+	}
 }

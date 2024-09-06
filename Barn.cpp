@@ -1,10 +1,9 @@
 #include "Barn.h"
 
 std::string Barn::getCropType() {
-	return this->cropType;
+	return this->getCropType();
 }
 
 double Barn::getTotalCapacity() {
-	// TODO - implement Barn::getTotalCapacity
-	throw "Not yet implemented";
+	return this->getTotalCapacity();
 }

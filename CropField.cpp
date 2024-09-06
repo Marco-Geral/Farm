@@ -1,16 +1,13 @@
 #include "CropField.h"
 
-void CropField::getSoilStateName() {
-	// TODO - implement CropField::getSoilStateName
-	throw "Not yet implemented";
+Soil* CropField::getSoilStateName() {
+	return this->soilState;
 }
 
 double CropField::getTotalCapacity() {
-	// TODO - implement CropField::getSoilStateName
-	throw "Not yet implemented";
+	return this->getTotalCapacity();
 }
 
 std::string CropField::getCropType() {
-	// TODO - implement CropField::getSoilStateName
-	throw "Not yet implemented";
+	return this->getCropType();
 }
