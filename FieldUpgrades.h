@@ -19,10 +19,6 @@ public:
         return unit->getCropType();
     }
 
-    Iterator* createIterator() override {
-        return unit->createIterator();
-    }
-
     virtual void upgrade() = 0;  // Abstract upgrade function for decorators
 };
 

@@ -21,3 +21,17 @@ void Fertilizer::increaseProduction() {
         field->setCurrentAmount(field->getCurrentAmount() + field->getTotalCapacity() * 3);
     }
 }
+
+void Fertilizer::harvest(CropField* field) {
+    if (field) {
+        // Check if the soil state is fruitful
+        if (dynamic_cast<FruitfulSoil*>(field->soilState)) {
+            // If soil is fruitful, harvest at 3x yield
+            double newAmount = field->getCurrentAmount() + field->getTotalCapacity() * 3;
+            field->setCurrentAmount(newAmount);
+        } else {
+            // If soil is not fruitful, delegate to regular harvest logic
+            field->harvestCrops(field);  // Pass the CropField* parameter to harvestCrops
+        }
+    }
+}

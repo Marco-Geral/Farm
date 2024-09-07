@@ -11,6 +11,7 @@ public:
 
     void upgrade() override;  // Transitions from DrySoil to FruitfulSoil
     void increaseProduction();  // Enhances crop yield
+    void harvest(CropField* field);
 };
 
 #endif
