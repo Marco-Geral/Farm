@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 #include "Barn.h"
 #include "BreadthFirstIterator.h"
 #include "CropField.h"
@@ -17,6 +16,7 @@ using namespace std;
 #include "Iterator.h"
 #include "Soil.h"
 #include "Truck.h"
+using namespace std;
 
 
 
