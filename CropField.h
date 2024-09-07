@@ -4,12 +4,16 @@
 #include "Soil.h"
 #include "DrySoil.h"
 #include <string>
+#include <iostream>
+
+class Soil;
 
 class CropField : public FarmUnit {
 	
 public:
+	virtual ~CropField() {}
 	Soil* soilState;
-	CropField(const std::string& cropType, double capacity, Soil* soilState);
+	CropField(std::string cropType, double capacity, Soil* soilState);
 	std::string getSoilStateName();
 	double getTotalCapacity();
 	std::string getCropType();

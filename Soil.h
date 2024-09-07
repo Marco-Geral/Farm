@@ -11,9 +11,12 @@ protected:
 	std::string soilState;
 
 public:
+	virtual ~Soil() {}
 	virtual void harvestCrops(CropField* field) = 0;
 	virtual void rain(CropField* field) = 0;
 	virtual std::string getName() = 0;
+
+	virtual bool isDrySoil() const { return false; }
 };
 
 #endif

@@ -1,6 +1,6 @@
 #include "CropField.h"
 
-CropField::CropField(const std::string& cropType, double capacity, Soil* soilState)
+CropField::CropField(std::string cropType, double capacity, Soil* soilState)
     : soilState(soilState)  // Initialize soilState
 {
     this->cropType = cropType;
@@ -33,5 +33,6 @@ void CropField::rain(CropField* field) {
 }
 
 bool CropField::needsFertilization() {
-    return dynamic_cast<DrySoil*>(soilState) != nullptr;
+    // Use the isDrySoil() method to check if the soil is dry
+    return soilState->isDrySoil();
 }

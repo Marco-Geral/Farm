@@ -1,11 +1,11 @@
 ZIP_FILE = u23584565.zip
 SRC_FILES = $(wildcard *.cpp)
 
-TestingMain: TestingMain.o Barn.o BreadthFirstIterator.o CropField.o DeliveryTruck.o DepthFirstIterator.o DrySoil.o ExtraBarn.o FarmLand.o FarmUnit.o Fertilizer.o FertilizerTruck.o FieldUpgrades.o FloodedSoil.o FruitfulSoil.o Iterator.o Soil.o Truck.o
-	g++ TestingMain.o Barn.o BreadthFirstIterator.o CropField.o DeliveryTruck.o DepthFirstIterator.o DrySoil.o ExtraBarn.o FarmLand.o FarmUnit.o Fertilizer.o FertilizerTruck.o FieldUpgrades.o FloodedSoil.o FruitfulSoil.o Iterator.o Soil.o Truck.o -o TestingMain
+main: main.o Barn.o BreadthFirstIterator.o CropField.o DeliveryTruck.o DepthFirstIterator.o DrySoil.o ExtraBarn.o FarmLand.o FarmUnit.o Fertilizer.o FertilizerTruck.o FieldUpgrades.o FloodedSoil.o FruitfulSoil.o Iterator.o Soil.o Truck.o
+	g++ main.o Barn.o BreadthFirstIterator.o CropField.o DeliveryTruck.o DepthFirstIterator.o DrySoil.o ExtraBarn.o FarmLand.o FarmUnit.o Fertilizer.o FertilizerTruck.o FieldUpgrades.o FloodedSoil.o FruitfulSoil.o Iterator.o Soil.o Truck.o -o main
 
-TestingMain.o: TestingMain.cpp Barn.h BreadthFirstIterator.h CropField.h DeliveryTruck.h DepthFirstIterator.h DrySoil.h ExtraBarn.h FarmLand.h FarmUnit.h Fertilizer.h FertilizerTruck.h FieldUpgrades.h FloodedSoil.h FruitfulSoil.h Iterator.h Soil.h Truck.h
-	g++ -c TestingMain.cpp
+main.o: main.cpp Barn.h BreadthFirstIterator.h CropField.h DeliveryTruck.h DepthFirstIterator.h DrySoil.h ExtraBarn.h FarmLand.h FarmUnit.h Fertilizer.h FertilizerTruck.h FieldUpgrades.h FloodedSoil.h FruitfulSoil.h Iterator.h Soil.h Truck.h
+	g++ -c main.cpp
 
 Barn.o: Barn.cpp Barn.h FarmUnit.h
 	g++ -c Barn.cpp
@@ -13,7 +13,7 @@ Barn.o: Barn.cpp Barn.h FarmUnit.h
 BreadthFirstIterator.o: BreadthFirstIterator.cpp BreadthFirstIterator.h Iterator.h FarmLand.h
 	g++ -c BreadthFirstIterator.cpp
 
-CropField.o: CropField.h CropField.cpp LegionFactory.h FarmUnit.h Soil.h DrySoil.h
+CropField.o: CropField.h CropField.cpp FarmUnit.h Soil.h DrySoil.h
 	g++ -c CropField.cpp
 
 DeliveryTruck.o: DeliveryTruck.h DeliveryTruck.cpp Truck.h Barn.h
@@ -49,22 +49,22 @@ FloodedSoil.o: FloodedSoil.h FloodedSoil.cpp Soil.h CropField.h
 FruitfulSoil.o: FruitfulSoil.h FruitfulSoil.cpp Soil.h CropField.h FloodedSoil.h
 	g++ -c FruitfulSoil.cpp
 
-run: TestingMain
-	./TestingMain
+run: main
+	./main
 
 clean:
-	rm -f *.o TestingMain TestingMain.exe
+	rm -f *.o main main.exe
 
 zip:
 	zip -u $(ZIP_FILE) $(SRC_FILES) *.h Makefile
 
 debugcpp: debugo
-	g++ -ggdb3 -o TestingMain *.o
+	g++ -ggdb3 -o main *.o
 
 debugo: *.cpp
 	g++ -ggdb3 -c -w *.cpp
 
 v:
 	make debugcpp
-	valgrind --tool=memcheck --leak-check=yes --track-origins=yes --log-file=valg.txt ./TestingMain
+	valgrind --tool=memcheck --leak-check=yes --track-origins=yes --log-file=valg.txt ./main
 	make clean

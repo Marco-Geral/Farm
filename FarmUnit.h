@@ -13,6 +13,7 @@ protected:
     std::vector<Truck*> trucks;  // List of trucks observing this unit
 
 public:
+    virtual ~FarmUnit() {}
     virtual double getTotalCapacity() = 0;
     virtual std::string getCropType() = 0;
 

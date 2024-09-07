@@ -14,6 +14,7 @@ public:
 	void harvestCrops(CropField* field);
 	void rain(CropField* field);
 	std::string getName();
+	bool isDrySoil() const override { return true; }
 };
 
 #endif

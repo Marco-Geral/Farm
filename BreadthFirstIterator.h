@@ -4,6 +4,8 @@
 #include "FarmLand.h"
 #include <queue>
 
+class FarmLand;
+
 class BreadthFirstIterator : public Iterator {
 private:
     std::queue<FarmUnit*> bfsQueue;  // Queue for BFS

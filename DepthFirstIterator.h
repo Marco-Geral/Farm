@@ -4,6 +4,8 @@
 #include "FarmLand.h"
 #include <stack>
 
+class FarmLand;
+
 class DepthFirstIterator : public Iterator {
 private:
     std::stack<FarmUnit*> dfsStack;  // Stack for DFS
