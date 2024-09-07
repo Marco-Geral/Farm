@@ -10,6 +10,8 @@ public:
 	Barn(const std::string& cropType, double capacity);
 	std::string getCropType();
 	double getTotalCapacity();
+
+	bool isStorageFull();
 };
 
 #endif

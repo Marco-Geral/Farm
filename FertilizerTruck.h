@@ -3,18 +3,17 @@
 #include "Truck.h"
 #include "CropField.h"
 
-class FertilizerTruck : Truck {
+class FertilizerTruck : public Truck {
 
 public:
-	CropField* cropFields;
+    CropField* cropField;
 
-	void buyTruck();
+    FertilizerTruck(CropField* field);  // Constructor
 
-	void sellTruck();
-
-	void callTruck();
-
-	void startEngine();
+    void buyTruck() override;
+    void sellTruck() override;
+    void callTruck() override;
+    void startEngine() override;
 };
 
 #endif

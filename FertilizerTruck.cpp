@@ -1,21 +1,27 @@
 #include "FertilizerTruck.h"
+#include <iostream>
+
+FertilizerTruck::FertilizerTruck(CropField* field) : cropField(field) {}
 
 void FertilizerTruck::buyTruck() {
-	// TODO - implement FertilizerTruck::buyTruck
-	throw "Not yet implemented";
+    std::cout << "Buying a Fertilizer Truck." << std::endl;
+    // Logic to purchase a fertilizer truck
 }
 
 void FertilizerTruck::sellTruck() {
-	// TODO - implement FertilizerTruck::sellTruck
-	throw "Not yet implemented";
+    std::cout << "Selling the Fertilizer Truck." << std::endl;
+    // Logic to sell the truck
 }
 
 void FertilizerTruck::callTruck() {
-	// TODO - implement FertilizerTruck::callTruck
-	throw "Not yet implemented";
+    // Check if the crop field needs fertilization
+    if (cropField->needsFertilization()) {
+		std::cout << "Calling a Fertilizer Truck" << std::endl;
+        startEngine();
+    }
 }
 
 void FertilizerTruck::startEngine() {
-	// TODO - implement FertilizerTruck::startEngine
-	throw "Not yet implemented";
+    // Logic to deliver fertilizer to the crop field
+    std::cout << "Fertilizer Truck delivering to field: " << cropField->getCropType() << std::endl;
 }

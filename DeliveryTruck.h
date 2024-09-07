@@ -3,18 +3,17 @@
 #include "Truck.h"
 #include "Barn.h"
 
-class DeliveryTruck : Truck {
+class DeliveryTruck : public Truck {
 
 public:
-	Barn* harvestedCrops;
+    Barn* barn;
 
-	void buyTruck();
+    DeliveryTruck(Barn* barn);  // Constructor
 
-	void startEngine();
-
-	void sellTruck();
-
-	void callTruck();
+    void buyTruck() override;
+    void sellTruck() override;
+    void callTruck() override;
+    void startEngine() override;
 };
 
 #endif

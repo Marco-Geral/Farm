@@ -31,3 +31,7 @@ void CropField::harvestCrops(CropField* field) {
 void CropField::rain(CropField* field) {
     soilState->rain(this);  // Delegate to current soil state
 }
+
+bool CropField::needsFertilization() {
+    return dynamic_cast<DrySoil*>(soilState) != nullptr;
+}

@@ -2,6 +2,7 @@
 #define CROPFIELD_H
 #include "FarmUnit.h"
 #include "Soil.h"
+#include "DrySoil.h"
 #include <string>
 
 class CropField : public FarmUnit {
@@ -16,6 +17,7 @@ public:
     void setSoilState(Soil* newSoilState);  // To transition between soil states
     void harvestCrops(CropField* field);  // Delegate to soilState
     void rain(CropField* field);  // Delegate to soilState
+	bool needsFertilization();
 };
 
 #endif

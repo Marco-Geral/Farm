@@ -1,21 +1,27 @@
 #include "DeliveryTruck.h"
+#include <iostream>
+
+DeliveryTruck::DeliveryTruck(Barn* barn) : barn(barn) {}
 
 void DeliveryTruck::buyTruck() {
-	// TODO - implement DeliveryTruck::buyTruck
-	throw "Not yet implemented";
-}
-
-void DeliveryTruck::startEngine() {
-	// TODO - implement DeliveryTruck::startEngine
-	throw "Not yet implemented";
+    std::cout << "Buying a Delivery Truck." << std::endl;
+    // Logic to purchase a delivery truck
 }
 
 void DeliveryTruck::sellTruck() {
-	// TODO - implement DeliveryTruck::sellTruck
-	throw "Not yet implemented";
+    std::cout << "Selling the Delivery Truck." << std::endl;
+    // Logic to sell the truck
 }
 
 void DeliveryTruck::callTruck() {
-	// TODO - implement DeliveryTruck::callTruck
-	throw "Not yet implemented";
+    // Check if the barn’s storage is nearing capacity
+    if (barn->isStorageFull()) {
+		std::cout << "Calling a Delivery Truck" << std::endl;
+        startEngine();
+    }
+}
+
+void DeliveryTruck::startEngine() {
+    // Logic to collect harvested crops from the barn
+    std::cout << "Delivery Truck collecting crops from barn: " << barn->getCropType() << std::endl;
 }

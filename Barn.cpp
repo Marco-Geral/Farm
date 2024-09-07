@@ -13,3 +13,7 @@ std::string Barn::getCropType() {
 double Barn::getTotalCapacity() {
 	return capacity;
 }
+
+bool Barn::isStorageFull() {
+    return (currentAmount / capacity) >= 0.8;  // Notify when 80% full
+}
