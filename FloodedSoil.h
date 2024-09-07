@@ -3,6 +3,7 @@
 #include "Soil.h"
 #include "CropField.h"
 #include <string>
+#include <iostream>
 
 class FloodedSoil : public Soil {
 

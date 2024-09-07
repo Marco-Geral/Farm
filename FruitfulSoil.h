@@ -4,6 +4,7 @@
 #include "CropField.h"
 #include "FloodedSoil.h"
 #include <string>
+#include <iostream>
 
 class FruitfulSoil : public Soil {
 

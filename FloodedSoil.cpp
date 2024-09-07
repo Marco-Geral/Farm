@@ -5,13 +5,11 @@ FloodedSoil::FloodedSoil() {
 }
 
 void FloodedSoil::harvestCrops(CropField* field) {
-    // No crop yield
-    // Do nothing, no crops can be harvested
+    std::cout << "Harvest was unsuccessful beacuse soil is Flooded" << std::endl;
 }
 
 void FloodedSoil::rain(CropField* field) {
-    // No state change on rain when flooded
-    // Do nothing, already flooded
+    std::cout << "Rain continues and soil remains Flooded..." << std::endl;
 }
 
 std::string FloodedSoil::getName() {
