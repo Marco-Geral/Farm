@@ -2,13 +2,28 @@
 #define FIELDUPGRADES_H
 #include "FarmUnit.h"
 
-class FieldUpgrades {
+class FieldUpgrades : public FarmUnit {  // Inherit from FarmUnit to act as a decorator
 
-private:
-	FarmUnit* Pieces;
+protected:
+    FarmUnit* unit;  // Composition: FieldUpgrades wraps a FarmUnit
 
 public:
-	virtual void upgrade() = 0;
+    FieldUpgrades(FarmUnit* unit) : unit(unit) {}  // Constructor to set the component
+
+    // Delegate existing functionality to the wrapped unit
+    double getTotalCapacity() override {
+        return unit->getTotalCapacity();
+    }
+
+    std::string getCropType() override {
+        return unit->getCropType();
+    }
+
+    Iterator* createIterator() override {
+        return unit->createIterator();
+    }
+
+    virtual void upgrade() = 0;  // Abstract upgrade function for decorators
 };
 
 #endif

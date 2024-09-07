@@ -7,17 +7,17 @@ Iterator* FarmLand::createIterator() {
 
 double FarmLand::getTotalCapacity() {
 	double sum = 0;
-	for(int i = 0; i < Units.size();i++){
-		sum += Units[i]->getTotalCapacity();
+	for(int i = 0; i < units.size();i++){
+		sum += units[i]->getTotalCapacity();
 	}
 	return sum;
 }
 
 std::string FarmLand::getCropType() {
     std::string crops;
-    for(int i = 0; i < Units.size(); i++) {
-        crops += Units[i]->getCropType();
-        if (i < Units.size() - 1) {
+    for(int i = 0; i < units.size(); i++) {
+        crops += units[i]->getCropType();
+        if (i < units.size() - 1) {
             crops += " | ";
         }
     }

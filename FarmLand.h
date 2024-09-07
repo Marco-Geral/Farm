@@ -14,6 +14,7 @@ public:
 	Iterator* createIterator();
 	double getTotalCapacity();
 	std::string getCropType();
+	
 	void add(FarmUnit* unit);
 	void remove(FarmUnit* unit);
 

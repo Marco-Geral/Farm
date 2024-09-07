@@ -9,11 +9,7 @@ CropField::CropField(const std::string& cropType, double capacity, Soil* soilSta
 }
 
 std::string CropField::getSoilStateName() {
-    if (soilState != nullptr) {
         return soilState->getName();
-    } else {
-        return "No soil state available";
-    }
 }
 
 double CropField::getTotalCapacity() {

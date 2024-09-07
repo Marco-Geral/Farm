@@ -1,18 +1,16 @@
 #ifndef FERTILIZER_H
 #define FERTILIZER_H
 #include "FieldUpgrades.h"
+#include "CropField.h"
 #include "FruitfulSoil.h"
+#include "DrySoil.h"
 
-class Fertilizer : FieldUpgrades {
-
+class Fertilizer : public FieldUpgrades {
 public:
-	FruitfulSoil newSoil;
+    Fertilizer(FarmUnit* unit);
 
-	void harvest();
-
-	void increaseProduction();
-
-	void upgrade();
+    void upgrade() override;  // Transitions from DrySoil to FruitfulSoil
+    void increaseProduction();  // Enhances crop yield
 };
 
 #endif

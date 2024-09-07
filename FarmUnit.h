@@ -13,7 +13,7 @@ protected:
 public:
     virtual double getTotalCapacity() = 0;
     virtual std::string getCropType() = 0;
-    virtual Iterator* createIterator() = 0;
+    //virtual Iterator* createIterator() = 0;
 
     double getCurrentAmount() const {
         return currentAmount;
@@ -21,6 +21,14 @@ public:
 
     void setCurrentAmount(double amount) {
         currentAmount = amount;
+    }
+
+    double getCapacity() const {
+        return capacity;
+    }
+
+    void setCapacity(double cap) {
+        capacity = cap;
     }
 };
 

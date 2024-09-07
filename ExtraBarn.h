@@ -1,14 +1,21 @@
 #ifndef EXTRABARN_H
 #define EXTRABARN_H
 #include "FieldUpgrades.h"
+#include "Barn.h"
+#include "FarmLand.h"
+#include <stdexcept>
+#include <iostream>
 
-class ExtraBarn : FieldUpgrades {
-
+class ExtraBarn : public FieldUpgrades {
+private:
+    double extraCapacity;  // Additional capacity provided by the extra barn
+    std::string cropType;  // Crop type for the new barn
 
 public:
-	virtual void upgrade() = 0;
+    ExtraBarn(FarmUnit* unit, double extraCapacity, const std::string& cropType);
 
-	double getLeftoverCapacity();
+    void upgrade() override;
+    double getLeftoverCapacity();
 };
 
 #endif
