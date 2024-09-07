@@ -23,3 +23,15 @@ double CropField::getTotalCapacity() {
 std::string CropField::getCropType() {
     return cropType;
 }
+
+void CropField::setSoilState(Soil* newSoilState) {
+    soilState = newSoilState;  // Set new soil state
+}
+
+void CropField::harvestCrops(CropField* field) {
+    soilState->harvestCrops(this);  // Delegate to current soil state
+}
+
+void CropField::rain(CropField* field) {
+    soilState->rain(this);  // Delegate to current soil state
+}

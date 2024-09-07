@@ -13,6 +13,10 @@ public:
 	std::string getSoilStateName();
 	double getTotalCapacity();
 	std::string getCropType();
+
+    void setSoilState(Soil* newSoilState);  // To transition between soil states
+    void harvestCrops(CropField* field);  // Delegate to soilState
+    void rain(CropField* field);  // Delegate to soilState
 };
 
 #endif

@@ -1,6 +1,8 @@
 #ifndef FRUITFULSOIL_H
 #define FRUITFULSOIL_H
 #include "Soil.h"
+#include "CropField.h"
+#include "FloodedSoil.h"
 #include <string>
 
 class FruitfulSoil : public Soil {
@@ -8,8 +10,8 @@ class FruitfulSoil : public Soil {
 
 public:
 	FruitfulSoil();
-	void harvestCrops();
-	void rain();
+	void harvestCrops(CropField* field);
+	void rain(CropField* field);
 	std::string getName();
 };
 
