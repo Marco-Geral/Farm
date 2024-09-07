@@ -1,18 +1,21 @@
 #ifndef DEPTHFIRSTITERATOR_H
 #define DEPTHFIRSTITERATOR_H
 #include "Iterator.h"
+#include "FarmLand.h"
+#include <stack>
 
-class DepthFirstIterator : Iterator {
-
+class DepthFirstIterator : public Iterator {
+private:
+    std::stack<FarmUnit*> dfsStack;  // Stack for DFS
+    FarmUnit* current;  // Pointer to current farm
 
 public:
-	void firstFarm();
+    DepthFirstIterator(FarmLand* root);
 
-	void next();
-
-	void isDone();
-
-	void currentFarm();
+    void firstFarm() override;
+    void next() override;
+    bool isDone() override;
+    FarmUnit* currentFarm() override;
 };
 
 #endif

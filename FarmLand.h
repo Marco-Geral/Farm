@@ -2,16 +2,19 @@
 #define FARMLAND_H
 #include "FarmUnit.h"
 #include "Iterator.h"
+#include "BreadthFirstIterator.h"
+#include "DepthFirstIterator.h"
 #include <vector>
 #include <string>
 
 
-class FarmLand : FarmUnit {
+class FarmLand : public FarmUnit {
 
 public:
 	std::vector<FarmUnit*> units;
 
-	Iterator* createIterator();
+	FarmLand(const std::string& cropType, double capacity);
+	Iterator* createIterator(const std::string& type);
 	double getTotalCapacity();
 	std::string getCropType();
 	

@@ -8,16 +8,11 @@ protected:
     FarmUnit* unit;  // Composition: FieldUpgrades wraps a FarmUnit
 
 public:
-    FieldUpgrades(FarmUnit* unit) : unit(unit) {}  // Constructor to set the component
+    FieldUpgrades(FarmUnit* unit);  // Constructor declaration
 
     // Delegate existing functionality to the wrapped unit
-    double getTotalCapacity() override {
-        return unit->getTotalCapacity();
-    }
-
-    std::string getCropType() override {
-        return unit->getCropType();
-    }
+    double getTotalCapacity() override;
+    std::string getCropType() override;
 
     virtual void upgrade() = 0;  // Abstract upgrade function for decorators
 };

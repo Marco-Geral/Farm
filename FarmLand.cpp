@@ -1,8 +1,18 @@
 #include "FarmLand.h"
 
-Iterator* FarmLand::createIterator() {
-	// TODO - implement FarmLand::createIterator
-	throw "Not yet implemented";
+FarmLand::FarmLand(const std::string& cropType, double capacity) {
+    this->cropType = cropType;
+    this->capacity = capacity;
+    this->currentAmount = 0;
+}
+
+Iterator* FarmLand::createIterator(const std::string& type) {
+    if (type == "BFS") {
+        return new BreadthFirstIterator(this);
+    } else if (type == "DFS") {
+        return new DepthFirstIterator(this);
+    }
+    return nullptr;
 }
 
 double FarmLand::getTotalCapacity() {
