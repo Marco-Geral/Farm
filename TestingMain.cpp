@@ -189,12 +189,99 @@ void testDecorator() {
     cout << "Remaining capacity after crops are added: " << barnedFarm->getLeftoverCapacity() << endl;
 }
 
+void testTruckLogistics() {
+    cout << "=====================================================TESTING TRUCK LOGISTICS================================================" << endl;
+
+    // Create a crop field and a barn to register trucks
+    Barn* barn = new Barn("General Storage", 200.0);
+    CropField* cropField = new CropField("Wheat", 100.0, new DrySoil());
+    
+    // Create DeliveryTruck and FertilizerTruck, both require a barn
+    DeliveryTruck* deliveryTruck = new DeliveryTruck(barn);
+    FertilizerTruck* fertilizerTruck = new FertilizerTruck(cropField);
+
+    // Register trucks to the crop field (Observer pattern)
+    cropField->registerTruck(deliveryTruck);
+    cropField->registerTruck(fertilizerTruck);
+
+    // Trigger events that should notify trucks
+    cropField->setCurrentAmount(90.0);
+    cout << "DeliveryTruck and FertilizerTruck should have been notified." << endl;
+
+    // Simulate truck operations
+    deliveryTruck->startEngine();
+    fertilizerTruck->startEngine();
+
+    // Simulate removing trucks
+    cropField->removeTruck(deliveryTruck);
+    cropField->removeTruck(fertilizerTruck);
+}
+
+
+void testExtraBarnExceptions() {
+    cout << "=====================================================TESTING EXTRABARN EXCEPTIONS================================================" << endl;
+
+    try {
+        // Attempt to apply ExtraBarn to a CropField (not allowed, should throw exception)
+        CropField* cropField = new CropField("Corn", 150.0, new DrySoil());
+        ExtraBarn* invalidBarn = new ExtraBarn(cropField, 50.0, "Corn");
+        invalidBarn->upgrade();  // Should throw exception
+
+    } catch (const std::invalid_argument& e) {
+        cout << "Caught exception: " << e.what() << endl;
+    }
+}
+
+void testFertilizer() {
+    cout << "=====================================================TESTING FERTILIZER================================================" << endl;
+
+    // Create a crop field
+    CropField* cropField = new CropField("Corn", 100.0, new DrySoil());
+    Fertilizer* fertilizedField = new Fertilizer(cropField);
+
+    // Simulate the fertilizer effect
+    fertilizedField->increaseProduction();
+    cout << "CropField Capacity after applying fertilizer: " << fertilizedField->getTotalCapacity() << endl;
+
+    // Simulate harvesting crops after applying fertilizer (correct parameter type)
+    fertilizedField->harvest(cropField);
+    cout << "After harvest, Current Amount: " << cropField->getCurrentAmount() << endl;
+}
+
+
+void testFarmEdgeCases() {
+    cout << "=====================================================TESTING FARM EDGE CASES================================================" << endl;
+
+    // Create an empty farmland and test behavior
+    FarmLand* emptyFarm = new FarmLand("Empty Farm", 0.0);
+    cout << "Empty Farm Capacity: " << emptyFarm->getTotalCapacity() << endl;
+
+    // Try adding a crop field beyond capacity
+    CropField* cropField = new CropField("Corn", 150.0, new DrySoil());
+    emptyFarm->add(cropField);  // Should not be able to add
+    cout << "After trying to add crop field, Farm Capacity: " << emptyFarm->getTotalCapacity() << endl;
+
+    // Test full barn capacity
+    Barn* fullBarn = new Barn("Wheat", 100.0);
+    fullBarn->setCurrentAmount(100.0);
+    cout << "Barn is full: " << (fullBarn->isStorageFull() ? "Yes" : "No") << endl;
+}
+
+
+
+
+
 
 int main() {
+    testFarmStructure();
     testDecorator();
     testComposite();
     testState();
     testIterator();
-    testFarmStructure();
+    cout << endl << "EXTRA TESTING FOR COVERAGE" << endl;
+    testTruckLogistics();        
+    testExtraBarnExceptions();   
+    testFertilizer();            
+    testFarmEdgeCases();
     return 0;
 }
