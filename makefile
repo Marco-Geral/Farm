@@ -20,7 +20,7 @@ TestingMain.o: TestingMain.cpp Barn.h BreadthFirstIterator.h CropField.h Deliver
 
 # Clean target to remove generated files
 clean:
-	rm -f *.o TestingMain
+	rm -f $(OBJS) TestingMain  # This will remove all object files and the executable
 
 # Debug target for debugging symbols
 debug: $(OBJS)
@@ -33,3 +33,14 @@ run: TestingMain
 # Zip target to compress relevant files into a zip archive
 zip:
 	zip -r $(ZIPFILE) $(SRC)
+
+debugcpp: debugo
+	g++ -ggdb3 -o main *.o
+
+debugo: *.cpp
+	g++ -ggdb3 -c -w *.cpp
+
+v:
+	make debugcpp
+	valgrind --tool=memcheck --leak-check=yes --track-origins=yes --log-file=valg.txt ./TestingMain
+	make clean

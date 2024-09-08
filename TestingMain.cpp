@@ -103,6 +103,10 @@ void testIterator() {
     delete bfsIterator;
     delete dfsIterator;
     delete mainFarm;
+    delete barn1;
+    delete barn2;
+    delete drySoil;
+    delete fruitfulSoil;
 }
 
 
@@ -134,6 +138,8 @@ void testState() {
     // Harvest with FloodedSoil (no yield)
     cropField->harvestCrops(cropField);  // Should yield no crops
     cout << "After harvest (FloodedSoil), Current Amount: " << cropField->getCurrentAmount() << endl;
+
+    delete cropField;
 }
 
 
@@ -158,6 +164,11 @@ void testComposite() {
     
     // Print total capacity of the composite
     cout << "Main Farm Current Capacity: " << mainFarm->getTotalCapacity() << endl;
+
+    delete mainFarm;
+    delete cropField1;
+    delete cropField2;
+    delete barn1;
 }
 
 void testDecorator() {
