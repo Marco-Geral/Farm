@@ -1,6 +1,6 @@
 #include "CropField.h"
 
-CropField::CropField(std::string cropType, double capacity, Soil* soilState)
+CropField::CropField(string cropType, double capacity, Soil* soilState)
     : soilState(soilState)  // Initialize soilState
 {
     this->cropType = cropType;
