@@ -3,6 +3,9 @@
 BreadthFirstIterator::BreadthFirstIterator(FarmLand* root) {
     bfsQueue.push(root);  // Start with the root node
     current = nullptr;
+    if (bfsQueue.empty()) {
+        cout << "Error: bfsQueue is empty at initialization!" << endl;
+    }
 }
 
 void BreadthFirstIterator::firstFarm() {
@@ -34,7 +37,8 @@ void BreadthFirstIterator::next() {
 }
 
 bool BreadthFirstIterator::isDone() {
-    return bfsQueue.empty();
+    bool empty = bfsQueue.empty();
+    return empty;
 }
 
 FarmUnit* BreadthFirstIterator::currentFarm() {

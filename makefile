@@ -2,7 +2,7 @@
 CXX = g++             # Compiler
 CXXFLAGS = -std=c++11  # Compiler flags
 LDFLAGS =              # Linker flags
-OBJS = main.o Barn.o BreadthFirstIterator.o CropField.o DeliveryTruck.o DepthFirstIterator.o DrySoil.o ExtraBarn.o FarmLand.o FarmUnit.o Fertilizer.o FertilizerTruck.o FieldUpgrades.o FloodedSoil.o FruitfulSoil.o Iterator.o Soil.o Truck.o
+OBJS = main.o Barn.o BreadthFirstIterator.o CropField.o DeliveryTruck.o DepthFirstIterator.o DrySoil.o ExtraBarn.o FarmLand.o FarmUnit.o Fertilizer.o FertilizerTruck.o FieldUpgrades.o FloodedSoil.o FruitfulSoil.o
 
 # Target for the final executable
 main: $(OBJS)

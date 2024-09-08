@@ -1,5 +1,5 @@
 #include "DrySoil.h"
-#include "DrySoil.h"
+#include "CropField.h"
 
 DrySoil::DrySoil() {
 	soilState = "Dry";
