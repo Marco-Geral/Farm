@@ -1,13 +1,14 @@
 #ifndef FRUITFULSOIL_H
 #define FRUITFULSOIL_H
 #include "Soil.h"
-#include "CropField.h"
+//#include "CropField.h"
 #include "FloodedSoil.h"
 #include <string>
 #include <iostream>
 
-class FruitfulSoil : public Soil {
+class CropField;
 
+class FruitfulSoil : public Soil {
 
 public:
 	FruitfulSoil();

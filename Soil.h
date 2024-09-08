@@ -1,9 +1,10 @@
 #ifndef SOIL_H
 #define SOIL_H
-#include <string>
 #include "CropField.h"
+#include <string>
 
-class CropField;
+
+//class CropField;
 
 class Soil {
 

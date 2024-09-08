@@ -1,4 +1,5 @@
 #include "FloodedSoil.h"
+#include "CropField.h"
 
 FloodedSoil::FloodedSoil() {
 	soilState = "Flooded";

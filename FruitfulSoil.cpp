@@ -1,4 +1,5 @@
 #include "FruitfulSoil.h"
+#include "CropField.h"
 
 FruitfulSoil::FruitfulSoil() {
 	soilState =  "Fruitful";
